@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".SettingsActivity">
+
+    <include
+        android:id="@+id/toolbarCatList"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/text_view_tittle_activity_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarCatList"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/text_view_show_current_api_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_tittle_activity_settings"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/your_current_api_key"
+        android:textColor="@color/black" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_view_current_api_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_show_current_api_key"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif"
+        app:hintEnabled="false">
+
+        <EditText
+            android:id="@+id/edit_text_current_api_key"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:drawableStart="@drawable/ic_key_white_24"
+            android:drawableTint="@color/black"
+            android:fontFamily="sans-serif"
+            android:hint="@string/current_api_key_hint"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_save_current_api_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_current_api_key"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="48dp"
+        android:drawableLeft="@drawable/ic_save_white_24"
+        android:drawableTint="@color/white"
+        android:text="@string/save"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/black" />
+
+</RelativeLayout>

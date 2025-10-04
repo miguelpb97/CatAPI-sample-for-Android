@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Cat API Viewer</string>
+    <string name="settings">Settings</string>
+    <string name="favorite_cats">Favorite cats</string>
+    <string name="reload_list">Reload list</string>
+    <string name="add_more_cats">Add more cats</string>
+    <string name="fav">Favorite</string>
+    <string name="back">Back</string>
+    <string name="insert_api_key">Insert you API key obtained from:\nhttps://thecatapi.com/</string>
+    <string name="api_key_hint">API Key</string>
+    <string name="current_api_key_hint">Current API Key</string>
+    <string name="first_step">First step</string>
+    <string name="save">Save</string>
+    <string name="your_current_api_key">Your current API key:</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".FavoriteCatsListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/toolbarCatList"
+            layout="@layout/toolbar" />
+
+        <TextView
+            android:id="@+id/tv_title_favorite_cats_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="32dp"
+            android:layout_below="@+id/toolbarCatList"
+            android:text="@string/favorite_cats"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="34sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_favorite_cats"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_below="@+id/tv_title_favorite_cats_activity"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_back_favorite_cats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler_view_favorite_cats"
+            android:layout_marginStart="84dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="48dp"
+            android:drawableLeft="@drawable/ic_arrow_back_white_24"
+            android:drawableTint="@color/white"
+            android:text="@string/back"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/black" />
+
+    </RelativeLayout>
+
+</ScrollView>

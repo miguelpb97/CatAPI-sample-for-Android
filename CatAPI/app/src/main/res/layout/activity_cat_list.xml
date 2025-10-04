@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CatListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/toolbarCatList"
+            layout="@layout/toolbar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_favorite_cat_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbarCatList"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/ic_favorite_border_white_24"
+            android:text="@string/favorite_cats" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_add_more_cats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_favorite_cat_list"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/ic_reload_white_24"
+            android:text="@string/add_more_cats" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_cat_list"
+            android:layout_width="match_parent"
+            android:layout_height="750dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:layout_below="@id/button_add_more_cats" />
+
+    </RelativeLayout>
+
+</ScrollView>
