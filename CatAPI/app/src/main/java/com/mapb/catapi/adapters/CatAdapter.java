@@ -1,18 +1,17 @@
-package com.mapb.catapiviewer.adapters;
+package com.mapb.catapi.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.mapb.catapiviewer.R;
-import com.mapb.catapiviewer.models.CatGetModel;
+import com.mapb.catapi.R;
+import com.mapb.catapi.models.CatGetModel;
 
 import java.util.ArrayList;
 

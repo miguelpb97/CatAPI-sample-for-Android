@@ -1,4 +1,4 @@
-package com.mapb.catapiviewer.models;
+package com.mapb.catapi.models;
 
 import com.google.gson.annotations.SerializedName;
 

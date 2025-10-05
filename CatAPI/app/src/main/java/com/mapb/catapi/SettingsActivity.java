@@ -1,4 +1,4 @@
-package com.mapb.catapiviewer;
+package com.mapb.catapi;
 
 import android.os.Bundle;
 

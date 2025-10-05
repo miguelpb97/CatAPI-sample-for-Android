@@ -1,8 +1,8 @@
-package com.mapb.catapiviewer.retrofit;
+package com.mapb.catapi.retrofit;
 
-import com.mapb.catapiviewer.models.FavoriteCatGetModel;
-import com.mapb.catapiviewer.models.FavoriteCatPostModel;
-import com.mapb.catapiviewer.models.CatGetModel;
+import com.mapb.catapi.models.FavoriteCatGetModel;
+import com.mapb.catapi.models.FavoriteCatPostModel;
+import com.mapb.catapi.models.CatGetModel;
 
 import java.util.ArrayList;
 

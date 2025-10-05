@@ -1,7 +1,6 @@
-package com.mapb.catapiviewer;
+package com.mapb.catapi;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -13,12 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mapb.catapiviewer.adapters.CatAdapter;
-import com.mapb.catapiviewer.adapters.FavoriteCatAdapter;
-import com.mapb.catapiviewer.models.CatGetModel;
-import com.mapb.catapiviewer.models.FavoriteCatGetModel;
-import com.mapb.catapiviewer.models.FavoriteCatPostModel;
-import com.mapb.catapiviewer.retrofit.RetrofitInterface;
+import com.mapb.catapi.adapters.FavoriteCatAdapter;
+import com.mapb.catapi.models.FavoriteCatGetModel;
+import com.mapb.catapi.retrofit.RetrofitInterface;
 
 import java.util.ArrayList;
 

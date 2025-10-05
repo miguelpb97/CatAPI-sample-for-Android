@@ -1,4 +1,4 @@
-package com.mapb.catapiviewer;
+package com.mapb.catapi;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -9,17 +9,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mapb.catapiviewer.adapters.CatAdapter;
-import com.mapb.catapiviewer.models.FavoriteCatPostModel;
-import com.mapb.catapiviewer.models.CatGetModel;
-import com.mapb.catapiviewer.retrofit.RetrofitInterface;
+import com.mapb.catapi.adapters.CatAdapter;
+import com.mapb.catapi.models.FavoriteCatPostModel;
+import com.mapb.catapi.models.CatGetModel;
+import com.mapb.catapi.retrofit.RetrofitInterface;
 
 import org.jetbrains.annotations.NotNull;
 

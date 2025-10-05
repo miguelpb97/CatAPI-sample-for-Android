@@ -1,4 +1,4 @@
-package com.mapb.catapiviewer;
+package com.mapb.catapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 

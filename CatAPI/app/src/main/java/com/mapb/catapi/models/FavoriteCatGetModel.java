@@ -1,8 +1,8 @@
-package com.mapb.catapiviewer.models;
+package com.mapb.catapi.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class FavoriteCatPostModel {
+public class FavoriteCatGetModel {
     @SerializedName("id")
     private float id;
 
@@ -10,7 +10,7 @@ public class FavoriteCatPostModel {
     private String image_id;
 
     @SerializedName("sub_id")
-    private String sub_id;
+    private String sub_id = null;
 
     @SerializedName("created_at")
     private String created_at;
@@ -18,8 +18,8 @@ public class FavoriteCatPostModel {
     @SerializedName("image")
     Image ImageObject;
 
-    public FavoriteCatPostModel(String imageId, String sub_id) {
-        this.image_id = imageId;
+    public FavoriteCatGetModel(float id, String sub_id) {
+        this.id = id;
         this.sub_id = sub_id;
     }
 
@@ -42,6 +42,8 @@ public class FavoriteCatPostModel {
     public Image getImage() {
         return ImageObject;
     }
+
+    // Setter Methods
 
     public void setId(float id) {
         this.id = id;
@@ -70,6 +72,9 @@ public class FavoriteCatPostModel {
         @SerializedName("url")
         private String url;
 
+
+        // Getter Methods
+
         public String getId() {
             return id;
         }
@@ -77,6 +82,8 @@ public class FavoriteCatPostModel {
         public String getUrl() {
             return url;
         }
+
+        // Setter Methods
 
         public void setId(String id) {
             this.id = id;
@@ -86,6 +93,4 @@ public class FavoriteCatPostModel {
             this.url = url;
         }
     }
-
 }
-
