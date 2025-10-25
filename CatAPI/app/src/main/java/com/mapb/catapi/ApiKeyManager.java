@@ -13,7 +13,8 @@ import java.io.File;
 public class ApiKeyManager {
     private static final String FILE_NAME = "config.dat";
 
-    public ApiKeyManager() {}
+    public ApiKeyManager() {
+    }
 
     public static void writeApiKeyFile(Context context, String text) {
         BufferedWriter bw = null;
@@ -42,7 +43,7 @@ public class ApiKeyManager {
 
     public static Boolean ApiKeyFileExists(Context context) {
         boolean exists = false;
-        File file = new File(context.getFilesDir() ,FILE_NAME);
+        File file = new File(context.getFilesDir(), FILE_NAME);
         if (file.exists() && file.isFile()) {
             exists = true;
         }

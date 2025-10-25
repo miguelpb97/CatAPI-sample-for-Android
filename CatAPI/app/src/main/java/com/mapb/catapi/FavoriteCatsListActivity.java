@@ -37,7 +37,6 @@ public class FavoriteCatsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorite_cats_list);
 
         RecyclerView rvFavoriteCats = findViewById(R.id.recycler_view_favorite_cats);
-        Button backButton = findViewById(R.id.button_back_favorite_cats);
 
         apiKey = ApiKeyManager.readApiKeyFile(getApplicationContext());
 
@@ -49,14 +48,6 @@ public class FavoriteCatsListActivity extends AppCompatActivity {
         rvFavoriteCats.setAdapter(catsFAdapter);
 
         getFavoriteCats();
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-                finish();
-            }
-        });
 
         catsFAdapter.setOnItemClickListener(new FavoriteCatAdapter.OnItemClickListener() {
             @Override
@@ -82,15 +73,15 @@ public class FavoriteCatsListActivity extends AppCompatActivity {
                         cats.add(cat);
                         catsFAdapter.notifyDataSetChanged();
                     }
-                    Toast.makeText(FavoriteCatsListActivity.this, "Gatos favoritos cargados con exito.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FavoriteCatsListActivity.this, "Favorite cats loaded with success.", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(FavoriteCatsListActivity.this, "Error al obtener gatos favoritos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FavoriteCatsListActivity.this, "Failed to get favorite cats.", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ArrayList<FavoriteCatGetModel>> call, Throwable t) {
-                Toast.makeText(FavoriteCatsListActivity.this, "Error de red al obtener gatos favoritos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FavoriteCatsListActivity.this, "Network error while getting favorite cats.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -109,20 +100,20 @@ public class FavoriteCatsListActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                                 if (response.isSuccessful() && response.code() == 200) {
-                                    Toast.makeText(FavoriteCatsListActivity.this, "Gato eliminado de favoritos.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(FavoriteCatsListActivity.this, "Cat removed from favorites.", Toast.LENGTH_SHORT).show();
 
                                     // Aquí puedes actualizar tu lista si es necesario
                                     // Por ejemplo: eliminar el elemento de la lista y notificar al adaptador
                                     cats.remove(index);
                                     catsFAdapter.notifyDataSetChanged();
                                 } else {
-                                    Toast.makeText(FavoriteCatsListActivity.this, "Error al eliminar el gato favorito", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(FavoriteCatsListActivity.this, "Error deleting favorite cat.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
                             @Override
                             public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
-                                Toast.makeText(FavoriteCatsListActivity.this, "Error de red al eliminar gato favorito", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(FavoriteCatsListActivity.this, "Network error while deleting favorite cat.", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

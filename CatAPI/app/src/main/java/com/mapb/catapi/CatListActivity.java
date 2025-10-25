@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,8 +44,8 @@ public class CatListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cat_list);
 
         // Definimos la toolbar
-       // Toolbar toolbar = findViewById(R.id.toolbarCatList);
-       // setSupportActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarCatList);
+        setSupportActionBar(toolbar);
 
         Button buttonFavoriteCats = findViewById(R.id.button_favorite_cat_list);
         Button buttonAddMoreCats = findViewById(R.id.button_add_more_cats);
@@ -94,7 +95,7 @@ public class CatListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NotNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.item_settings) {
+        if (id == R.id.item_setting) {
             Intent intent = new Intent(CatListActivity.this, SettingsActivity.class);
             startActivity(intent);
         }
@@ -112,7 +113,7 @@ public class CatListActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         getCats();
-                        Toast.makeText(CatListActivity.this, "Recargando lista de gatos...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CatListActivity.this, "Loading random cats...", Toast.LENGTH_SHORT).show();
                     }
                 }, 750);
             }
@@ -146,18 +147,18 @@ public class CatListActivity extends AppCompatActivity {
 
                         catsAdapter.notifyDataSetChanged();
 
-                        Toast.makeText(CatListActivity.this, "Gatos generados correctamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CatListActivity.this, "Random cats obtained correctly.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
 
-                    Toast.makeText(CatListActivity.this, "Error al obtener un gato aleatorio.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CatListActivity.this, "Error loading cat list.", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<ArrayList<CatGetModel>> call, @NonNull Throwable t) {
 
-                Toast.makeText(CatListActivity.this, "Error de red al obtener un gato aleatorio. Intentalo de nuevo.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CatListActivity.this, "Network error while getting a random cat. Please try again.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -166,7 +167,7 @@ public class CatListActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(CatListActivity.this, "Añadiendo gato a favoritos...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CatListActivity.this, "Adding cat to favorites.", Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -178,17 +179,17 @@ public class CatListActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(@NonNull Call<FavoriteCatPostModel> call, @NonNull Response<FavoriteCatPostModel> response) {
                                 if (response.isSuccessful()) {
-                                    Toast.makeText(CatListActivity.this, "Gato añadido a favoritos.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CatListActivity.this, "Cat added to favorites.", Toast.LENGTH_SHORT).show();
                                     cats.remove(index);
                                     catsAdapter.notifyDataSetChanged();
                                 } else {
-                                    Toast.makeText(CatListActivity.this, "Error al añadir el gato a favoritos.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CatListActivity.this, "Error adding cat to favorites.", Toast.LENGTH_SHORT).show();
                                 }
                             }
 
                             @Override
                             public void onFailure(@NonNull Call<FavoriteCatPostModel> call, @NonNull Throwable t) {
-                                Toast.makeText(CatListActivity.this, "Error de red al añadir el gato a favoritos.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CatListActivity.this, "Network error while adding cat to favorites.", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
